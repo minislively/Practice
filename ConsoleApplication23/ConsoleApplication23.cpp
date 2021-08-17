@@ -3,21 +3,22 @@ using namespace std;
 
 int main()
 {
-    int a; 
+    int a, n=0; 
+    char ch(65);
 
-    cin >> a; 
+    cin >> a;
 
     for (int i = 1; i <= a; i++)
     {
-        for (int k = 1; k < i; k++)
+        for (int j = i; j <= a; j++)
         {
-            cout << " ";
+            cout << j  << " ";
         }
-        for (int j = 2*a-1; j >= 2*i-1 ; j--)
+   
+        for (int k = 1; k<=i ; k++)
         {
-            cout << "*";
+            cout << ch++ << " ";
         }
         cout << endl;
-        
     }
 }
