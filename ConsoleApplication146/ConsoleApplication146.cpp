@@ -2,8 +2,7 @@
 
 int main()
 {
-    long long int a, b;
-
-    scanf("%lld %lld", &a, &b);
-    printf("%lld", a + b);
+    int a;
+    scanf("%d", &a);
+    printf("%d", -a);
 }
