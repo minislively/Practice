@@ -1,31 +1,46 @@
 ﻿using System;
 
-namespace BasicClass
+namespace Interface
 {
-    class Cat
+    interface IEmployee
     {
-        public string Name;
-        public string Color;
-
-        public void Meow()
+        string Name { get; set; }
+        int Counter { get; }
+    }
+    public class Staff:IEmployee
+    {
+        private String name;
+        private int counter;
+        public static int NOofEmployee;
+        public string Name
         {
-            Console.WriteLine("{0} : 야옹", Name);
+            get { return name; }
+            set { name = value; }
+        }
+        public int Counter
+        {
+            get { return counter; }
+        }
+        public Staff()
+        {
+            counter = ++counter + NOofEmployee;
         }
     }
     class MainApp
     {
         static void Main(string[] args)
         {
-            Cat kitty = new Cat();
-            kitty.Color = "하얀색";
-            kitty.Name = "키티";
+            string name;
+            Console.Write("직원 수 입력 : ");
+            Staff.NOofEmployee = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("{0} : {1}", kitty.Name, kitty.Color);
+            Staff my = new Staff();
+            Console.Write("신입 직원의 이름을 입력하세요 : ");
+            name = Console.ReadLine();
+            my.Name = name;
 
-            Cat nero = new Cat();
-            nero.Color = "검은색";
-            nero.Name = "네로";
-            Console.WriteLine("{0} : {1}", nero.Name, nero.Color);
+            Console.WriteLine(" [ 직원 정보 ] ");
+            Console.WriteLine("직원 정보 : {0}, 직원 이름 : {1}", my.Counter, my.Name);
         }
     }
 }
