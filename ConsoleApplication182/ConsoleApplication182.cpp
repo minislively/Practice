@@ -7,7 +7,7 @@ int main() {
     for (int i = 1; i <= n; i++)
         scanf("%d", &a[i]);
     for (int i = n; i >= 1; i--) {
-        d[i] - 1;
+        d[i] = 1;
         for (int j = i + 1; j <= n; j++) {
             if (a[i] > a[j] && d[i] < d[j] + 1)
                 d[i] = d[j] + 1;
