@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:App1"
+             BackgroundColor="White"
+             x:Class="App1.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:MainViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+        <Label Text="Discover" TextColor="Black" FontSize="24" FontAttributes="Bold" Margin="15"/>
+
+        <CarouselView ItemsSource="{Binding places}" HeightRequest="300" PeekAreaInsets="110">
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame HeightRequest="280" WidthRequest="180"
+                           BackgroundColor="White" Padding="0"
+                           HasShadow="True" Margin="10" CornerRadius="10"
+                           HorizontalOptions="CenterAndExpand">
+                            <Grid>
+                                <StackLayout BackgroundColor="Black">
+                                    <Image Source="{Binding imgSource}" Aspect="AspectFill" 
+                                           VerticalOptions="FillAndExpand" Opacity="0.7"/>
+                                </StackLayout>
+                                <StackLayout Margin="0,0,0,10">
+                                    <Image Source=""                
+                                           HeightRequest="50" 
+                                           Aspect="AspectFit" HorizontalOptions="EndAndExpand" Margin="10,0"/>
+                                    <Label Text="{Binding title}" TextColor="White" FontSize="16" 
+                                           FontAttributes="None" Margin="15,0" 
+                                           VerticalOptions="EndAndExpand"/>
+                                    <StackLayout Orientation="Horizontal" Margin="15,-8,0,0">
+                                        <Image Source="M.pngusi"
+                                               HeightRequest="15" Margin="-5,0"
+                                               Aspect="AspectFit"/>
+                                        <Label Text="{Binding country}" TextColor="White" FontSize="14" 
+                                               FontAttributes="None" Margin="1" 
+                                               VerticalOptions="EndAndExpand"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                        </Frame>
+
+                    </StackLayout>
+
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Feeling adventurous?" TextColor="Black" FontSize="24" FontAttributes="Bold" Margin="15"/>
+            <Label HorizontalOptions="EndAndExpand" Text="Show all" TextColor="Gray" FontSize="18" FontAttributes="None" VerticalTextAlignment="Center" Margin="15"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+            <StackLayout Margin="5" WidthRequest="100">
+                <ImageButton BackgroundColor="White" Source="https://cdn-icons-png.flaticon.com/512/195/195527.png" HeightRequest="50" />
+                <Label HorizontalOptions="Center" Text="Kayak" TextColor="Gray" FontSize="16" FontAttributes="None" VerticalTextAlignment="Center" Margin="10"/>
+            </StackLayout>
+            <StackLayout Margin="5" WidthRequest="100">
+                <ImageButton BackgroundColor="White" Source="https://cdn-icons-png.flaticon.com/512/195/195527.png" HeightRequest="50" />
+                <Label HorizontalOptions="Center" Text="Baloon" TextColor="Gray" FontSize="16" FontAttributes="None" VerticalTextAlignment="Center" Margin="10"/>
+            </StackLayout>
+            <StackLayout Margin="5" WidthRequest="100">
+                <ImageButton  BackgroundColor="White"  Source="C.png" HeightRequest="50" />
+                <Label HorizontalOptions="Center" Text="Hiking" TextColor="Gray" FontSize="16" FontAttributes="None" VerticalTextAlignment="Center" Margin="10"/>
+            </StackLayout>
+            <StackLayout Margin="5" WidthRequest="100">
+                <ImageButton  BackgroundColor="White"  Source="C.png" HeightRequest="50" />
+                <Label HorizontalOptions="Center" Text="Running" TextColor="Gray" FontSize="16" FontAttributes="None" VerticalTextAlignment="Center" Margin="10"/>
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+
+
+</ContentPage>
