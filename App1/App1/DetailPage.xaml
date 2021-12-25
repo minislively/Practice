@@ -169,9 +169,53 @@
                                     ControlTemplate="{StaticResource CustomTab}"
                                     Text="Review" TextColorSelected="Orange"
                                     >
-                                    <Grid BackgroundColor="Blue" >
+                                    <StackLayout BackgroundColor="White">
+                                        <Grid BackgroundColor="white">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
 
-                                    </Grid>
+                                            <StackLayout
+                                                     VerticalOptions="Start" >
+
+                                                <Grid BackgroundColor="white">
+                                
+                                                    <StackLayout Grid.Column="0"
+                                                     VerticalOptions="Start" HeightRequest="150">
+                                                        <Image Source="https://images.pexels.com/photos/3608071/pexels-photo-3608071.jpeg" Aspect="AspectFit"  
+                                                           VerticalOptions="CenterAndExpand" />
+
+                                                    </StackLayout>
+                   
+      
+                                                </Grid>
+
+
+                                            </StackLayout>
+
+                                            <StackLayout Grid.Column="1" 
+                                                     VerticalOptions="Start" >
+
+                                                <Grid BackgroundColor="white">
+
+
+                                                    <StackLayout Grid.Column="0" HeightRequest="130" VerticalOptions="Start">
+                                                        <Label Text="this is test label should be your desription.this is test label should be your desription.this is test label should be your desription." FontAttributes="None" FontSize="16" TextColor="Black"
+                                                           VerticalOptions="EndAndExpand"/>
+
+                                                    </StackLayout>
+    
+                                                </Grid>
+
+
+                                            </StackLayout>
+                                        </Grid>
+                                        <StackLayout>
+                                            <Label Text="" 
+                                                   TextColor="Black" FontSize="16" />
+                                        </StackLayout>
+                                    </StackLayout>
 
                                 </xyt:TabViewItem>
                             </xyt:TabView>
@@ -192,7 +236,7 @@
             </StackLayout >
             <StackLayout HeightRequest="65"  VerticalOptions="EndAndExpand">
                 <pancake:PancakeView BackgroundColor="Orange" HeightRequest="65" VerticalOptions="EndAndExpand" CornerRadius="20,20,0,0">
-                    <Label Text="Book now" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <Button Clicked="Button_Clicked" Text="Book now" BackgroundColor="Orange" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
                 </pancake:PancakeView>
             </StackLayout>
         </Grid>
