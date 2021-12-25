@@ -211,10 +211,7 @@
 
                                             </StackLayout>
                                         </Grid>
-                                        <StackLayout>
-                                            <Label Text="" 
-                                                   TextColor="Black" FontSize="16" />
-                                        </StackLayout>
+
                                     </StackLayout>
 
                                 </xyt:TabViewItem>
