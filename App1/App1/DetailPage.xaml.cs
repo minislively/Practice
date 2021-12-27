@@ -17,9 +17,9 @@ namespace App1
             InitializeComponent();
         }
 
-        async private void Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Review());
+            Navigation.PushAsync(new Review());
         }
     }
 }
